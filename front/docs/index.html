@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/style.min.css?_v=20221020160344">
+  <link rel="stylesheet" href="css/style.min.css?_v=20221020170119">
   <title>Front packager 2022</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
 </header>
 <main>
   <h1>
-    welcome to presto team
+    welcome to presto team 2022
   </h1>
 </main>
 <footer class="footer">
@@ -21,6 +21,6 @@
 
   </div>
 </footer>
-<script src="js/app.min.js?_v=20221020160344"></script>
+<script src="js/app.min.js?_v=20221020170119"></script>
 </body>
 </html>
