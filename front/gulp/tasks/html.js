@@ -1,6 +1,7 @@
 import fileInclude from "gulp-file-include"
 import webpHtmlNoSvg from "gulp-webp-html-nosvg"
 import versionNumber from "gulp-version-number"
+import renameFile from "gulp-rename";
 
 export const html = () => {
   return app.gulp.src(app.path.src.html)
@@ -16,20 +17,22 @@ export const html = () => {
         app.isBuild,
         versionNumber({
           "value": "%DT%",
-          "append" : {
+          "append": {
             "key": "_v",
             "cover": 0,
-            "to" : [
+            "to": [
               "css",
               "js"
             ]
           },
-          "output" : {
+          "output": {
             "file": "gulp/version.json"
           }
         })
       )
     )
-    .pipe(app.gulp.dest(app.path.build.html))
-    .pipe(app.plugins.browsersync.stream())
+    .pipe(renameFile(path => {
+      path.extname = ".php"
+    }))
+    .pipe(app.gulp.dest(app.path.build.php))
 }

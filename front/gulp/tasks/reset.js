@@ -1,9 +1,5 @@
 import {deleteAsync} from "del";
 
 export const reset = () => {
-  return deleteAsync(app.path.clean)
+  return deleteAsync([`!${app.path.build.php}/functions.php`, `${app.path.build.php}/*.php`, `${app.path.clean}/assets`], {force: true});
 }
-
-// export const cleanPhp = () => {
-//   return deleteAsync([`${app.pathForBackTask.build.root}/*.php`], {force: true});
-// }
