@@ -35,4 +35,5 @@ export const html = () => {
       path.extname = ".php"
     }))
     .pipe(app.gulp.dest(app.path.build.php))
+    .pipe(app.plugins.browsersync.stream())
 }
