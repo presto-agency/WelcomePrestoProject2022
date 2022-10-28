@@ -37,3 +37,38 @@ export const html = () => {
     .pipe(app.gulp.dest(app.path.build.php))
     .pipe(app.plugins.browsersync.stream())
 }
+
+export const htmlComponents = () => {
+  return app.gulp.src(app.path.src.htmlComponents)
+    .pipe(fileInclude())
+    .pipe(
+      app.plugins.ifPlugin(
+        app.isBuild,
+        webpHtmlNoSvg()
+      )
+    )
+    .pipe(
+      app.plugins.ifPlugin(
+        app.isBuild,
+        versionNumber({
+          "value": "%DT%",
+          "append": {
+            "key": "_v",
+            "cover": 0,
+            "to": [
+              "css",
+              "js"
+            ]
+          },
+          "output": {
+            "file": "gulp/version.json"
+          }
+        })
+      )
+    )
+    .pipe(renameFile(path => {
+      path.extname = ".php"
+    }))
+    .pipe(app.gulp.dest(`${app.path.build.php}/assets/html`))
+    .pipe(app.plugins.browsersync.stream())
+}
