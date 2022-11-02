@@ -1,12 +1,29 @@
 body {
   background-color: black;
+}
+
+.presto-wrapper {
+  width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  flex-direction: column;
+
+  .logo-presto {
+    max-width: 500px;
+    height: 400px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
 
   h1 {
+    margin: 20px 0 0 0;
     text-transform: uppercase;
-    color: #fff;
+    color: white;
   }
 }

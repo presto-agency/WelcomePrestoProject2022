@@ -6,19 +6,18 @@ const buildFolder = "../wp-content/themes/project";
 
 export const path = {
   build: {
-    js: `${buildFolder}/assets/js/`,
-    css: `${buildFolder}/assets/css/`,
-    php: `${buildFolder}/`,
-    images: `${buildFolder}/assets/img/`,
-    fonts: `${buildFolder}/assets/fonts/`,
+    js: `${buildFolder}/docs/js/`,
+    css: `${buildFolder}/docs/css/`,
+    html: `${buildFolder}/docs/`,
+    images: `${buildFolder}/docs/img/`,
+    fonts: `${buildFolder}/docs/fonts/`,
   },
   src: {
     js: `${srcFolder}/js/app.js`,
     images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${srcFolder}/img/**/*.svg`,
     scss: `${srcFolder}/scss/style.scss`,
-    html: `${srcFolder}/*.html`,
-    htmlComponents: `${srcFolder}/html/*.html`,
+    html: [`${srcFolder}/*.html`, `!${srcFolder}/*_*.html`],
     svgicons: `${srcFolder}/svgicons/*.svg`,
   },
   watch: {
