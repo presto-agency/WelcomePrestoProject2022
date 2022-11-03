@@ -1,6 +1,6 @@
 /front/node_modules
 /.idea
-/source
+/front/source
 /front/package-lock.json
 .DS_Store
 
