@@ -3,6 +3,7 @@
 /front/source
 /front/package-lock.json
 .DS_Store
+/.publish
 
 #для гілки back розкоментувати
 #/front
