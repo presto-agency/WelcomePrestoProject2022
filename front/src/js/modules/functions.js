@@ -1,3 +1,3 @@
-export function hi () {
-  console.log('hello presto')
+export const hi = () => {
+  console.log('hi')
 }
