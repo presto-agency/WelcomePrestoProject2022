@@ -11604,7 +11604,7 @@ function applyBlockValidation(unvalidatedBlock, blockType) {
 
 
 function parseRawBlock(rawBlock, options) {
-  let normalizedBlock = normalizeRawBlock(rawBlock); // During the lifecycle of the project, we renamed some old blocks
+  let normalizedBlock = normalizeRawBlock(rawBlock); // During the lifecycle of the helloprestotheme, we renamed some old blocks
   // and transformed others to new blocks. To avoid breaking existing content,
   // we added this function to properly parse the old content.
 

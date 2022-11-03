@@ -2,7 +2,7 @@ import * as nodePath from "path";
 const rootFolder = nodePath.basename(nodePath.resolve());
 
 const srcFolder = "./front/src";
-const buildFolder = "./wp-content/themes/project";
+const buildFolder = "./wp-content/themes/helloprestotheme";
 
 export const path = {
   build: {
