@@ -1,8 +1,0 @@
-/front/node_modules
-/.idea
-/front/source
-/front/package-lock.json
-.DS_Store
-
-#для гілки back розкоментувати
-#/front
