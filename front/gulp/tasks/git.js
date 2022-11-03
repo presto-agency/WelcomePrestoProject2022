@@ -1,17 +1,8 @@
-import gitpages from "gh-pages"
+import ghpages from "gulp-gh-pages"
 
 export const git = () => {
-  return app.gulp.src(`${app.path.build}/**/*`)
-    .pipe(gitpages.publish(
-      `${app.path.build}/docs`, {
-        branch: "front-end"
-      }
-    ))
+  return app.gulp.src('./../wp-content/themes/project/docs/**/*')
+    .pipe(
+      ghpages()
+    )
 }
-
-// export const git = () => {
-//   return app.gulp.src(`${app.path.build}/**/*`)
-//     .pipe(
-//       ghpages({branch: 'front-end'})
-//     )
-// }

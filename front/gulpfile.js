@@ -29,11 +29,12 @@ function watcher() {
 }
 
 export {otfToTtf}
+export {git}
 
 const mainTasks = gulp.parallel(html, scss, js, images, svgSprite, ttfToWoff);
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
-const build = gulp.series(reset, mainTasks, git);
+const build = gulp.series(reset, mainTasks);
 
 export {dev}
 export {build}
