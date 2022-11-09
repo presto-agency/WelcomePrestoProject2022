@@ -4,6 +4,8 @@
 package-lock.json
 .DS_Store
 /.publish
+/keys
+/prod
 
 #для гілки back розкоментувати
 #/front

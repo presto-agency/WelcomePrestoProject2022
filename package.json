@@ -6,10 +6,11 @@
   "type": "module",
   "scripts": {
     "dev": "gulp",
-    "back": "gulp back",
+    "test": "gulp test",
     "build": "gulp build --build",
     "otfToTtf": "gulp otfToTtf",
-    "git": "gulp git"
+    "git": "gulp git",
+		"production": "gulp production"
   },
   "author": "Anton K",
   "license": "ISC",
