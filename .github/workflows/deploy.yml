@@ -1,4 +1,3 @@
-
 name: Deploy
 
 on:
@@ -13,7 +12,8 @@ jobs:
     matrix:
       node-version: [ '14.x' ]
     steps:
-      - uses: actions/checkout@v2
+      - name: step-1
+        uses: actions/checkout@v2
       # Setup key
       - run: set -eu
       - run: mkdir "$HOME/.ssh"
