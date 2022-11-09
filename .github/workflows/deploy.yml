@@ -13,7 +13,6 @@ jobs:
     matrix:
       node-version: [ '14.x' ]
     steps:
-
      - name: 'step-1'
        uses: actions/checkout@v2
 
