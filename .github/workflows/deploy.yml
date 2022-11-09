@@ -35,5 +35,5 @@ jobs:
         run: npm run production
 
       - name: 'step-8'
-        run: cd prod && rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . dev_user@dev.studiopresto.dev:/home/schangin/public_html/dev
+        run: cd prod && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . schangin@92.204.214.212:/home/schangin/public_html/dev
 
