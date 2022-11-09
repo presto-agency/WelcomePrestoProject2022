@@ -26,5 +26,5 @@ jobs:
         - run: npm ci
         - run: npm run production
         #Deploy (замінити шлях до зібраного проекту, також шлях на сервері до папки сайтуі домену)
-        -run: cd prod && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . dev_user@dev.studiopresto.dev:/home/schangin/public_html/dev
+        -run: cd prod && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . dev_user@dev.studiopresto.dev:/home/schangin/public_html/dev/dev.studiopresto.dev
 
