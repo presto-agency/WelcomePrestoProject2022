@@ -12,28 +12,29 @@ jobs:
   strategy:
     matrix:
       node-version: [ '14.x' ]
-    steps:
-     - name: 'step-1'
-       uses: actions/checkout@v2
 
-     - name: 'step-2'
-       run: set -eu
+  steps:
+   - name: 'step-1'
+     uses: actions/checkout@v2
 
-      - name: 'step-3'
-        run: mkdir "$HOME/.ssh"
+   - name: 'step-2'
+     run: set -eu
 
-      - name: 'step-4'
-        run: echo "$" > "$HOME/.ssh/key"
+    - name: 'step-3'
+      run: mkdir "$HOME/.ssh"
 
-      - name: 'step-5'
-      - run: chmod 600 "$HOME/.ssh/key"
+    - name: 'step-4'
+      run: echo "$" > "$HOME/.ssh/key"
 
-      - name: 'step-6'
-        run: npm ci
+    - name: 'step-5'
+    - run: chmod 600 "$HOME/.ssh/key"
 
-      - name: 'step-7'
-        run: npm run production
+    - name: 'step-6'
+      run: npm ci
 
-      - name: 'step-8'
-        run: cd prod && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . cd prod && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . dev_user@dev.studiopresto.dev:/home/schangin/public_html/dev/dev.studiopresto.dev
+    - name: 'step-7'
+      run: npm run production
+
+    - name: 'step-8'
+      run: cd prod && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . cd prod && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . dev_user@dev.studiopresto.dev:/home/schangin/public_html/dev/dev.studiopresto.dev
 
