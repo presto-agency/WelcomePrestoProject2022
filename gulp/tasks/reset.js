@@ -4,9 +4,9 @@ export const reset = () => {
   return deleteAsync(`${app.path.clean}/assets`, {force: true});
 }
 
-export const resetProd = () => {
-	return deleteAsync(`${app.path.build.prod}`, {force: true});
-}
+// export const resetProd = () => {
+// 	return deleteAsync(`${app.path.build.prod}`, {force: true});
+// }
 
 export const resetSomeFiles = () => {
 	return deleteAsync(		[
@@ -18,6 +18,7 @@ export const resetSomeFiles = () => {
 		`${app.path.build.prod}/.gitignore`,
 		`${app.path.build.prod}/gulpfile.js`,
 		`${app.path.build.prod}/package.json`,
+		`${app.path.build.prod}/package-lock.json`,
 		`${app.path.build.prod}/README.md`,
 	], {force: true});
 }

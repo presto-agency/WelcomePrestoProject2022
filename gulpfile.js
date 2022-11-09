@@ -20,7 +20,7 @@ import {otfToTtf, ttfToWoff} from "./gulp/tasks/fonts.js"
 import {svgSprite} from "./gulp/tasks/svgSprite.js"
 import {git} from "./gulp/tasks/git.js";
 import {copyForProd} from "./gulp/tasks/copyForProd.js";
-import {resetProd, resetSomeFiles} from "./gulp/tasks/reset.js";
+import {/*resetProd,*/ resetSomeFiles} from "./gulp/tasks/reset.js";
 
 function watcher() {
   gulp.watch(path.watch.html, html);
@@ -37,7 +37,7 @@ const mainTasks = gulp.parallel(html, scss, js, images, svgSprite, ttfToWoff);
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks, git);
-const production = gulp.series(resetProd, copyForProd, resetSomeFiles);
+const production = gulp.series(/*resetProd, */copyForProd, resetSomeFiles);
 
 export {dev}
 export {build}
