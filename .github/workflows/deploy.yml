@@ -33,6 +33,6 @@ jobs:
       - name: 'step-7'
         run: npm run production
 
-      - name: 'step-8'
+      - name: 'final'
         run: cd prod && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . schangin@studiopresto.dev:/home/schangin/public_html/dev
 
