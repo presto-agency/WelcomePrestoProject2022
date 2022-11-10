@@ -1,4 +1,3 @@
-
 name: Deploy
 
 on:
@@ -9,9 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        node-version: [ '16.x' ]
+    #    strategy:
+    #      matrix:
+    #        node-version: [ '16.x' ]
     steps:
       - name: 'step-1'
         uses: actions/checkout@v2
@@ -35,5 +34,5 @@ jobs:
         run: npm run production
 
       - name: 'step-8'
-        run: cd prod && rsync -e "ssh -p 20022 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . schangin@92.204.214.212:/home/schangin/public_html/dev/dev.studiopresto.dev
+        run: cd prod && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . schangin@dev.studiopresto.dev:/home/schangin/public_html/dev/
 
