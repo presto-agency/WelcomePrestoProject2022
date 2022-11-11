@@ -12,17 +12,17 @@ jobs:
     #      matrix:
     #        node-version: [ '16.x' ]
     steps:
+      - name: 'Get latest code'
+        uses: actions/checkout@v2
+
       - name: 'set up dependencies'
         run: npm ci
 
       - name: 'run build task'
         run: npm run production
 
-#      - name: 'change directory'
-#        run: cd prod
-
-      - name: 'Get latest code'
-        uses: actions/checkout@v2
+      #      - name: 'change directory'
+      #        run: cd prod
 
       - name: 'Sync files'
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
