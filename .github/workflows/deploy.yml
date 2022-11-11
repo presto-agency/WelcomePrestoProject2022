@@ -34,5 +34,5 @@ jobs:
         run: npm run production
 
       - name: 'step-8'
-        run: cd prod && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . prestode@prestode.ftp.tools:/home/prestode/dev.studiopresto.dev/www
+        run: cd prod && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . prestode@prestode.ftp.tools:/home/prestode/dev.studiopresto.dev/www/
 
