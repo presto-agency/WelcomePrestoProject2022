@@ -24,7 +24,7 @@ jobs:
       #      - name: 'change directory'
       #        run: cd prod
 
-      - name: 'Sync files finish'
+      - name: 'Sync files'
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.REMOTE_HOST }}
