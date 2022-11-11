@@ -12,27 +12,24 @@ jobs:
     #      matrix:
     #        node-version: [ '16.x' ]
     steps:
-      - name: 'step-1'
-        uses: actions/checkout@v2
-
-      - name: 'step-2'
-        run: set -eu
-
-      - name: 'step-3'
-        run: mkdir "$HOME/.ssh"
-
-      - name: 'step-4'
-        run: echo "$" > "$HOME/.ssh/key"
-
-      - name: 'step-5'
-        run: chmod 600 "$HOME/.ssh/key"
-
-      - name: 'step-6'
+      - name: 'set up dependencies'
         run: npm ci
 
-      - name: 'step-7'
+      - name: 'run build task'
         run: npm run production
 
-      - name: 'step-8'
-        run: cd prod && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . prestode@prestode.ftp.tools:/home/prestode/dev.studiopresto.dev/www/
+#      - name: 'change directory'
+#        run: cd prod
+
+      - name: 'Get latest code'
+        uses: actions/checkout@v2
+
+      - name: 'Sync files'
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_PATH }}
+          local-dir: ./prod
 
