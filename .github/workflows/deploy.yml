@@ -31,5 +31,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_PATH }}
-          local-dir: ./prod/front/
+          local-dir: ./prod/wp-content/themes/helloprestotheme/
 
